@@ -68,6 +68,9 @@ $(document).ready(function(){
   		checkGuess(guess);
   	});
 
+ 	$(".new").on('click', function(){
+ 		window.location.reload(true);
+ 	});
 
 
 });
