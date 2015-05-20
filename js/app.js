@@ -7,13 +7,31 @@ function incrementCounter(){
 };
 
 function checkGuess(guess){
+	var diff;
 	var guessInt = parseInt(guess);
-	var diff = number - guessInt; 
+	
 	if (guess == number){
 		$("#feedback").text("Correct!");
-	} else {
-		console.log("wrong");
+	} else if (guessInt > number) {
+		diff = guessInt - number;
+	} else if (guessInt < number) {
+		diff = number - guessInt;
+
 	}
+
+	if (diff >= 1 && diff <= 10) {
+		$("#feedback").text("Very Hot");
+	} else if (diff < 10 && diff <= 20){
+		$("#feedback").text("Hot");
+	} else if (diff < 20 && diff <= 30){
+		$("#feedback").text("Warm");
+	} else if (diff < 30 && diff <= 50){
+		$("#feedback").text("Cold");
+	} else if ( diff > 50){
+		$("#feedback").text("Ice Cold");
+	}
+
+
 };
 
 function generateNumber(){
@@ -21,21 +39,7 @@ function generateNumber(){
 };
 
 
-// Check high or low
 
-function guessIsHigher(guess){
-	if (guess > number ){
-		return true;
-	} else {
-		return false;
-	}
-
-};
-
-// Compare generated number with user guess
-
-
-// Present appropiate feedback
 
 
 $(document).ready(function(){
