@@ -45,7 +45,7 @@ function generateNumber(){
 $(document).ready(function(){
 
 	generateNumber();
-	console.log(number);
+	
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
